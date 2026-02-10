@@ -13,12 +13,9 @@
     background-size: cover;
     background-position: center top;
 }
-/* Navbar fixes */
 .navbar {
     background-color: transparent !important;
 }
-
-/* Text & layout */
 .get-schooled {
     font-size: 16vh;
     font-weight: 700;
