@@ -15,7 +15,7 @@ const MainNavbar = () => {
                 <Navbar.Toggle aria-controls="navbar-nav" />
 
                 <Navbar.Collapse id="navbar-nav" className="justify-content-end">
-                    <Nav className="fw-bold">
+                    <Nav className="fw-bold txt-size ">
                         <Nav.Link
                             href="/Courses"
                             className="text-white mx-3 txt-link"

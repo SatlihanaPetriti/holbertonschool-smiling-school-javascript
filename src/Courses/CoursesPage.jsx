@@ -5,7 +5,7 @@ import Footer from "../components/Footer/footer.jsx";
 const CoursesPage = () => {
     return (
         <>
-            <div className="bg-pricing text-white">
+            <div className="bg-course text-white">
                 <MainNavbar />
                 <CoursesP />
             </div>
