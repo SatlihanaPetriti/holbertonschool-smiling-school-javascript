@@ -18,6 +18,6 @@
 }
 .bt-edit{
     background-color: #C271FF !important;
-    border-radius: 22px;
-    border: none;
+    border-radius: 22px !important;
+    border: none !important;
 }

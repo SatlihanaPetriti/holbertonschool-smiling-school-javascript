@@ -1,35 +1,13 @@
-
-import { Navbar, Nav, Container, Button, Row, Col, Card } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "../../images/smile_off.png"; 
-import logo1 from "../../images/logo.png"
+import { Container, Button, Row, Col, Card } from "react-bootstrap";
 import phillip from "../../images/profile_1.jpg";
 import nannie from "../../images/profile_2.jpg";
 import bruce from "../../images/profile_3.jpg";
 import henry from "../../images/profile_4.jpg";
-import './header.css';
+import "./header.css";
 
 const Header = () => {
     return (
-        <header className="bg-image text-white">
-
-            <Navbar expand="lg" variant="dark" className="py-3">
-                <Container>
-                    <Navbar.Brand href="#">
-                        <img src={logo} alt="Logo" height={30} className="px-3"/>
-                        <img src={logo1} alt="Logo" height={30} />
-                    </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="navbar-nav" />
-                    <Navbar.Collapse id="navbar-nav" className="justify-content-end">
-                        <Nav>
-                            <Nav.Link href="/" className="text-white fw-500 mx-3">Courser</Nav.Link>
-                            <Nav.Link href="/" className="text-white fw-500 mx-3">Pricing</Nav.Link>
-                            <Nav.Link href="/" className="text-white fw-500 mx-3">Login</Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-
+        <>
             <Container className="text-center py-5 ">
                 <h1 className="get-schooled">Get schooled</h1>
                 <ul className="list-inline">
@@ -38,9 +16,9 @@ const Header = () => {
                     <li className="list-inline-item mx-5">LAUGH</li>
                 </ul>
                 <div className=" mt-5">
-                <Button  className="btn-purple px-4 py-2">
-                    REGISTER FOR FREE
-                </Button>
+                    <Button className="btn-purple px-4 py-2 ">
+                        REGISTER FOR FREE
+                    </Button>
                 </div>
             </Container>
 
@@ -57,7 +35,7 @@ const Header = () => {
                             <Card.Img variant="top" src={phillip} className="student-img" />
                             <Card.Body >
                                 <Card.Title>Phillip Massey</Card.Title>
-                                <Card.Text className="fst-italic"> «Smile of the year» <br/>2018-2019</Card.Text>
+                                <Card.Text className="fst-italic"> «Smile of the year» <br />2018-2019</Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -84,7 +62,7 @@ const Header = () => {
 
                     <Col md={3}>
                         <Card bg="dark" text="white" className="text-center border-0 bg-transparent">
-                            <Card.Img variant="top" src={henry}  className="student-img " />
+                            <Card.Img variant="top" src={henry} className="student-img " />
                             <Card.Body >
                                 <Card.Title>Henry Hughes</Card.Title>
                                 <Card.Text className="fst-italic">«24h smiles» winner <br />2016-2019</Card.Text>
@@ -93,7 +71,7 @@ const Header = () => {
                     </Col>
                 </Row>
             </Container>
-        </header>
+        </>
     );
 };
 

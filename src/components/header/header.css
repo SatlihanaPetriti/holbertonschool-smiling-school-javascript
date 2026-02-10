@@ -13,18 +13,26 @@
     background-size: cover;
     background-position: center top;
 }
-.get-schooled{
+/* Navbar fixes */
+.navbar {
+    background-color: transparent !important;
+}
+
+/* Text & layout */
+.get-schooled {
     font-size: 16vh;
     font-weight: 700;
     padding-top: 120px;
 }
 
 .btn-purple {
-    background-color: #C271FF;
+    background-color: #C271FF !important;
     border: none !important;
-    color: #ffffff;
-    font-weight: bold;
-    border-radius: 50px;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    border-radius: 50px !important;
+    box-shadow:10px 10px 10px rgba(0, 0, 0, 0.45) !important;
+    
 
 }
 
@@ -32,17 +40,18 @@
     background-color: #b260e6 !important;
 }
 
-.txt-learn{
+.txt-learn {
     color: #C271FF;
 }
 
-.card-img{
+.card-img {
     border-radius: 50px !important;
 }
+
 .student-img {
-    margin: 0 auto;
-    display: block;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    margin: 0 auto !important;
+    display: block !important;
+    width: 120px !important;
+    height: 120px !important;
+    border-radius: 50% !important;
 }
