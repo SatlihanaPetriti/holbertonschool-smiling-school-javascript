@@ -2,12 +2,14 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../../images/smile_off.png";
 import logo1 from "../../images/logo.png";
 import './navbar.css';
+import { Link } from 'react-router-dom';
+
 
 const MainNavbar = () => {
     return (
         <Navbar expand="lg" variant="dark" className="py-3 bg-transparent">
             <Container>
-                <Navbar.Brand>
+                <Navbar.Brand as={Link} to="/">
                     <img src={logo} alt="Logo" height={30} className="me-2" />
                     <img src={logo1} alt="Logo" height={30} />
                 </Navbar.Brand>

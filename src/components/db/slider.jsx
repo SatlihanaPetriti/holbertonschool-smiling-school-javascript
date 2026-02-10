@@ -78,5 +78,23 @@ const tutorials = [
         duration: "8 min",
         stars: 5,
     },
+    {
+        thumb: happy,
+        title: "Happy Smile",
+        text: "Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.",
+        author: "Phillip Massey",
+        authorPic: profile,
+        duration: "8 min",
+        stars: 5,
+    },
+    {
+        thumb: happy,
+        title: "Happy Smile",
+        text: "Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.",
+        author: "Phillip Massey",
+        authorPic: profile,
+        duration: "8 min",
+        stars: 5,
+    },
 ];
 export default tutorials;
