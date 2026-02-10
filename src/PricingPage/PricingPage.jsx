@@ -8,8 +8,8 @@ const PricingPage = () => {
     return (
         <>
             <div className="bg-pricing text-white">
-            <MainNavbar />
-            <Pricing />
+                <MainNavbar />
+                <Pricing />
             </div>
             <Testimonial />
             <FaqSection />

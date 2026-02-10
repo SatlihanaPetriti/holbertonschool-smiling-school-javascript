@@ -1,7 +1,7 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../../images/smile_off.png";
 import logo1 from "../../images/logo.png";
-import "../header/header.css";
+import './navbar.css';
 
 const MainNavbar = () => {
     return (
@@ -15,12 +15,24 @@ const MainNavbar = () => {
                 <Navbar.Toggle aria-controls="navbar-nav" />
 
                 <Navbar.Collapse id="navbar-nav" className="justify-content-end">
-                    <Nav>
-                        <Nav.Link className="text-white mx-3">Courses</Nav.Link>
-                        <Nav.Link href="/Pricing" className="text-white mx-3">
-                            Pricing
+                    <Nav className="fw-bold">
+                        <Nav.Link
+                            href="/Courses"
+                            className="text-white mx-3 txt-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            COURSES
                         </Nav.Link>
-                        <Nav.Link className="text-white mx-3">Login</Nav.Link>
+                        <Nav.Link
+                            href="/Pricing"
+                            className="text-white mx-3 txt-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            PRICING
+                        </Nav.Link>
+                        <Nav.Link className="text-white mx-3 txt-link">LOGIN</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
