@@ -13,7 +13,7 @@ const PopularVideos = [
         author: "Phillip Massey",
         authorPic: profile,
         duration: "8 min",
-        stars: 4,
+        stars: 3,
     },
     {
         thumb: sad,

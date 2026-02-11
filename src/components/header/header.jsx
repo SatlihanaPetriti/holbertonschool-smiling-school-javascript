@@ -31,7 +31,7 @@ const Header = () => {
             <Container className="py-5">
                 <Row className="g-4 justify-content-center">
                     <Col md={3}>
-                        <Card bg="dark" text="white" className="text-center border-0 bg-transparent">
+                        <Card  text="white" className="text-center border-0 bg-transparent">
                             <Card.Img variant="top" src={phillip} className="student-img" />
                             <Card.Body >
                                 <Card.Title>Phillip Massey</Card.Title>

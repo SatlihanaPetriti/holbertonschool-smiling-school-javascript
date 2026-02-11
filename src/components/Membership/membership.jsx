@@ -11,7 +11,7 @@ const Membership = () => {
 
             <Row className=" justify-content-center g-4 ms-5">
                 <Col md={3}>
-                    <div className="item_smile p-3">
+                    <div className=" p-3">
                         <Image 
                         src={smile} 
                         alt="membership" 
@@ -24,7 +24,7 @@ const Membership = () => {
                 </Col>
 
                 <Col md={3}>
-                    <div className="item_smile p-3">
+                    <div className=" p-3">
                         <Image
                             src={smile}
                             alt="membership"
@@ -37,7 +37,7 @@ const Membership = () => {
                 </Col>
 
                 <Col md={3}>
-                    <div className="item_smile p-3">
+                    <div className=" p-3">
                         <Image
                             src={smile}
                             alt="membership"
@@ -50,7 +50,7 @@ const Membership = () => {
                 </Col>
 
                 <Col md={3}>
-                    <div className="item_smile p-3">
+                    <div className=" p-3">
                         <Image
                             src={smile}
                             alt="membership"

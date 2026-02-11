@@ -26,7 +26,7 @@ const Footer = () => {
                     </Col>
 
                     {/* Social icons */}
-                    <Col md={6} className="text-md-end mt-3 mt-md-0">
+                    <Col md={6} className="text-md-end">
                         <a href="https://www.facebook.com/" className="footer-icon">
                             <Facebook size={20} />
                         </a>

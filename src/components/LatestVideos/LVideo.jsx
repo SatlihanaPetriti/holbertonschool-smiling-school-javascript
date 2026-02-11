@@ -13,7 +13,7 @@ const renderStars = (count) => {
         let starImage;
         // filled or empty
         if (i < count) {
-            // filled star 
+            // filled star
             starImage = starColor;
         } else {
             //  empty star
