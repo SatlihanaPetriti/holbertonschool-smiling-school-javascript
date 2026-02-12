@@ -1,4 +1,4 @@
-import { Container, Row, Col, Form, Dropdown, InputGroup } from "react-bootstrap";
+import { Container, Row, Col, Form, InputGroup } from "react-bootstrap";
 import "./sortby.css";
 import { Search } from 'react-bootstrap-icons';
 

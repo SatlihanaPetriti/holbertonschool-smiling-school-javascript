@@ -1,85 +1,104 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
-import goni from "../../images/profile_5.jpg";
 import arrowLeft from "../../images/arrow_white_left.png";
 import arrowRight from "../../images/arrow_white_right.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './testimonial.css';
-
-const testimonials = [
-    {
-        quote: "« Those tutorials are concise and go straight to the point. I can't think of a better place to learn smiling. And it's so fun! »",
-        name: "Person Name",
-        role: "Weather Presenter",
-        img: goni,
-    },
-    {
-        quote: "« Another testimonial. »",
-        name: "Another Person",
-        role: "Content Creator",
-        img: goni,
-    },
-];
+import axios from "axios";
 
 const Testimonial = () => {
-    const [number, setNumber] = useState(0);
+    const [quotes, setQuotes] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [error, setError] = useState("");
+   
 
-    const nextTestimonial = () => {
-        if (number < testimonials.length - 1) {
-            setNumber(number + 1);
+    useEffect(() => {
+        async function loadData() {
+            try {
+                const data = await axios.get("https://smileschool-api.hbtn.info/quotes");
+                if (data.status === 200) {
+                    setQuotes(data.data);
+                }
+            } catch (error) {
+                setError("We can not load data for the moment");
+            }
         }
+
+        loadData();
+    }, []);
+
+    if (error) {
+        return (
+            <p >{error}</p>
+        );
+    }
+
+    if (!quotes.length) {
+        return (
+            <p className="text-center">Loading testimonials...</p>
+        );
+    }
+
+    const currentSlide = quotes[currentIndex];
+
+    const previous = () => {
+        setCurrentIndex((prevState) => {
+            let index = prevState - 1;
+            if (index < 0) {
+                index = quotes.length - 1;
+            }
+            return index;
+        });
     };
 
-    const prevTestimonial = () => {
-        if (number > 0) {
-            setNumber(number - 1);
-        }
+    const next = () => {
+        setCurrentIndex((prevState) => {
+            let index = prevState + 1;
+            if (index >= quotes.length) {
+                index = 0;
+            }
+            return index;
+        });
     };
-
-    const current = testimonials[number];
 
     return (
-        <section className="bg-color text-white py-5 ">
+        <section className="bg-color text-white py-5">
             <Container className="position-relative">
-                {/* Left Arrow */}
-                <Button
-                    variant="link"
-                    onClick={prevTestimonial}
-                    className="position-absolute top-50"
-                >
-                    <Image 
-                    src={arrowLeft} 
-                    alt="Previous" 
-                    width={30} />
-                </Button>
+                {quotes.length > 1 && (
+                    <Button
+                        variant="link"
+                        onClick={previous}
+                        className="position-absolute top-50  translate-middle-y"
+                    >
+                        <Image src={arrowLeft} width={30} alt="Previous" />
+                    </Button>
+                )}
 
-                <Row className="align-items-center justify-content-center g-5 py-4">
+                <Row className="align-items-center justify-content-center">
                     <Col md="auto">
                         <Image
-                            src={current.img}
-                            alt={current.name}
+                            src={currentSlide.pic_url}
                             roundedCircle
                             className="testimonial-img"
+                            alt={currentSlide.name}
                         />
                     </Col>
                     <Col md={7}>
-                        <blockquote className="fs-5 fw-light">{current.quote}</blockquote>
-                        <p className="fw-bold mt-3 mb-1">{current.name}</p>
-                        <p className="fst-italic">{current.role}</p>
+                        <p className="fs-5 fw-light">"{currentSlide.text}"</p>
+                        <p className="fw-bold mb-1">{currentSlide.name}</p>
+                        <p className="fst-italic">{currentSlide.title}</p>
                     </Col>
                 </Row>
 
-                {/* Right Arrow */}
-                <Button
-                    variant="link"
-                    onClick={nextTestimonial}
-                    className="position-absolute end-0 top-50"
-                >
-                    <Image 
-                    src={arrowRight} 
-                    alt="Next" 
-                    width={30} />
-                </Button>
+                {quotes.length > 1 && (
+                    <Button
+                        variant="link"
+                        onClick={next}
+                        className="position-absolute top-50 end-0 translate-middle-y"
+                    >
+                        <Image src={arrowRight} width={30} alt="Next" />
+                    </Button>
+                )}
             </Container>
         </section>
     );
