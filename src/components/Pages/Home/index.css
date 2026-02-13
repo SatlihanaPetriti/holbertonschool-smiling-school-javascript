@@ -1,0 +1,65 @@
+header {
+    background: url('../../../images/pic_1.jpg');
+    background-size: cover;
+    height: 550px;
+}
+
+nav {
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.menu {
+    width: 250px;
+    float: right;
+}
+
+.menu>li {
+    list-style-type: none;
+    display: inline-block;
+    width: 60px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.schooled {
+    font-size: 100px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: 180px;
+}
+
+
+.categories {
+    width: 20%;
+    margin: 0 auto;
+    display: block;
+}
+
+.categories>li {
+    list-style-type: none;
+    display: inline-block;
+    width: 60px;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.register-btn {
+    width: 180px;
+    margin: 40px auto;
+    padding: 10px;
+    border: 0px;
+    display: block;
+    background-color: #c271ff;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.quote-slider {
+    background-color: #c271ff;
+}
