@@ -4,6 +4,7 @@ import HomePage from "./Pages/Home/index";
 import PricingPage from "./Pages/Pricing/index";
 import CoursesPage from "./Pages/Courses/index";
 
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
