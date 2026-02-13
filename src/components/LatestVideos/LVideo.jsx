@@ -19,7 +19,6 @@ const renderStars = (count) => {
             //  empty star
             starImage = starGray;
         }
-        // Add the star image the array
         stars.push(
             <Image
                 src={starImage}
@@ -40,7 +39,6 @@ const LatestVideos = () => {
                 <h1 className="text-center fs-2 py-5 mb-5 fw-light">
                     <span className="fw-bold txt-learn">Latest</span> videos
                 </h1>
-
                 <div className="d-flex align-items-center position-relative">
                     {/* Cards */}
                     <Row className="g-4" >

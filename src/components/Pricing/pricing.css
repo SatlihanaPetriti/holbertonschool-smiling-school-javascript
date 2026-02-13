@@ -13,36 +13,45 @@
     background-size: cover;
     background-position: center top;
 }
-.text-main{
+
+.text-main {
     font-size: 40px;
     word-spacing: 10px;
 }
-.txt-plan{
+
+.txt-plan {
     padding-left: 340px;
     margin-top: 5rem;
 }
+
 .check-icon {
     color: black;
     background-color: rgb(100, 213, 49);
     border-radius: 50%;
     font-size: 2rem;
 }
+
 .plan {
     margin-bottom: 1rem;
 }
-.txt-month{
+
+.txt-month {
     color: rgb(125, 120, 120);
 }
+
 .pricing-row {
     padding: 15px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-.pricing-row.signal-row {
+
+.signal-row {
     border-bottom: none;
 }
+
 .pricing-row:last-child {
     border-bottom: none;
 }
+
 .btn-purple {
     background-color: #C271FF;
     border: none;
@@ -50,6 +59,7 @@
     padding: 0.5rem 1.5rem;
     font-weight: bold;
 }
+
 .btn-purple:hover {
     background-color: #b260e6;
 }

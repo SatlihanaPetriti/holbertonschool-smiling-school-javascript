@@ -12,8 +12,8 @@ const Pricing = () => {
             <img src={play}
                 alt="play button"
                 height={60}
-                className="mb-5">
-            </img>
+                className="mb-5"/>
+    
             <h1 className="text-main">
                 What is
                 <span className="ms-3">
@@ -30,7 +30,7 @@ const Pricing = () => {
             </h1>
             <h2 className="fw-bold fs-1 mt-5 mb-5">Go pro!</h2>
             <Row className="justify-content-center mb-4 txt-plan">
-                <Col xs={6} sm={4} >
+                <Col >
                     <div className="plan">
                         <Button className="btn-purple mb-5">
                             BUY 3 MONTHS

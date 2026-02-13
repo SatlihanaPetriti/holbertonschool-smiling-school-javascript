@@ -27,15 +27,9 @@ const Testimonial = () => {
         loadData();
     }, []);
 
-    if (error) {
-        return (
-            <p >{error}</p>
-        );
-    }
-
     if (!quotes.length) {
         return (
-            <p className="text-center">Loading testimonials...</p>
+            <p className="text-center">Loading test</p>
         );
     }
 
