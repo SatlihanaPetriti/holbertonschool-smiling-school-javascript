@@ -11,15 +11,21 @@ import "./popular_tutorial.css";
 const PopularTutorials = () => {
     const [tutorials, setTutorials] = useState([]);
     const [startIndex, setStartIndex] = useState(0);
+    const [error, setError] = useState("");
     const cardsToShow = 4;
 
     // Fetch API
     useEffect(() => {
         async function loadTutorials() {
+        try {
             const response = await axios.get(
                 "https://smileschool-api.hbtn.info/popular-tutorials"
             );
             setTutorials(response.data);
+        } catch (error) {
+                console.error("Failed to load tutorials:", error);
+                setError("Unable to load tutorials at the moment"); // optional user-friendly error
+            }
         }
 
         loadTutorials();
@@ -37,7 +43,6 @@ const PopularTutorials = () => {
 
             stars.push(
                 <Image
-                    key={i}
                     src={starImage}
                     width={20}
                     height={20}
@@ -64,15 +69,15 @@ const PopularTutorials = () => {
     const visibleTutorials = tutorials.slice(startIndex, startIndex + cardsToShow);
 
     return (
-        <section className="py-5 position-relative">
+        <section className="py-5">
             <Container>
                 <h1 className="text-center fs-2 py-5 mb-5 fw-light">
                     Most <span className="fw-bold txt-learn">popular</span> tutorials
                 </h1>
 
-                <div className="d-flex align-items-center">
+                <div className="d-flex">
 
-                    {/* Left Button */}
+                    {/* Left button */}
                     {tutorials.length > cardsToShow && (
                         <Button
                             variant="link"
@@ -80,16 +85,16 @@ const PopularTutorials = () => {
                             disabled={startIndex === 0}
                             className="me-2"
                         >
-                            <Image src={arrowLeft} alt="Previous" width={30} />
+                            <img src={arrowLeft} alt="Previous" width={30} />
                         </Button>
                     )}
 
-                    {/* Tutorial Cards */}
-                    <Row className="g-4 flex-nowrap overflow-hidden">
+                    {/* Tutorial cards */}
+                    <Row className="g-4 ">
                         {visibleTutorials.map((tutorial) => (
-                            <Col key={tutorial.id} md={3}>
-                                <Card className="bg-white shadow-sm">
-                                    <div className="position-relative overflow-hidden rounded-top">
+                            <Col >
+                                <Card className=" shadow-sm">
+                                    <div className="position-relative rounded-top">
                                         <Image
                                             src={play}
                                             alt="Play"
@@ -99,7 +104,7 @@ const PopularTutorials = () => {
                                         />
                                         <Image
                                             src={tutorial.thumb_url}
-                                            alt={tutorial.title}
+                                            alt="Happpy smile"
                                             className="w-100"
                                         />
                                     </div>
@@ -125,7 +130,7 @@ const PopularTutorials = () => {
                                             </span>
                                         </div>
 
-                                        <div className="d-flex justify-content-between align-items-center">
+                                        <div className="d-flex justify-content-between ">
                                             <div>{renderStars(tutorial.star)}</div>
                                             <span className="fw-bold text-purple">
                                                 {tutorial.duration}
@@ -137,7 +142,7 @@ const PopularTutorials = () => {
                         ))}
                     </Row>
 
-                    {/* Right Button */}
+                    {/* Right button */}
                     {tutorials.length > cardsToShow && (
                         <Button
                             variant="link"
@@ -145,7 +150,7 @@ const PopularTutorials = () => {
                             disabled={startIndex >= tutorials.length - cardsToShow}
                             className="ms-2"
                         >
-                            <Image src={arrowRight} alt="Next" width={30} />
+                            <img src={arrowRight} alt="Next" width={30} />
                         </Button>
                     )}
                 </div>

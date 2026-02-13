@@ -7,7 +7,7 @@ const VideoFilter = () => {
         <section className="py-4 sort-by">
             <Container>
                 <Row className="g-5 justify-content-center align-items-center">
-                    <Col xs={12} sm={8} md={6} lg={4}>
+                    <Col>
                         <InputGroup>
                             <InputGroup.Text className=" filter-control bg-white border-end-0 filter-control">
                                 <Search size={25} />
@@ -23,7 +23,7 @@ const VideoFilter = () => {
 
 
                     {/*  dropdown 1 */}
-                    <Col xs={12} sm={8} md={6} lg={4}>
+                    <Col >
                         <Form.Select
                             className="filter-control  rounded"
                             size="lg"
@@ -35,7 +35,7 @@ const VideoFilter = () => {
                     </Col>
 
                     {/* dropdown 2 */}
-                    <Col xs={12} sm={8} md={6} lg={4}>
+                    <Col >
                         <Form.Select
                             className="filter-control rounded"
                             size="lg"
