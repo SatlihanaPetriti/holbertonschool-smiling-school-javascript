@@ -77,12 +77,11 @@ const VideoPart = () => {
 
     return (
         <>
-            {/* FILTER SECTION */}
             <section className="py-4 sort-by">
                 <Container>
                     <Row className="g-5">
 
-                        {/* KEYWORD */}
+                        {/* keyword */}
                         <Col>
                             <InputGroup>
                                 <InputGroup.Text className="filter-control">
@@ -98,7 +97,7 @@ const VideoPart = () => {
                             </InputGroup>
                         </Col>
 
-                        {/* TOPIC */}
+                        {/* topic*/}
                         <Col>
                             <Form.Select
                                 className="filter-control rounded"
@@ -113,7 +112,7 @@ const VideoPart = () => {
                             </Form.Select>
                         </Col>
 
-                        {/* SORT */}
+                        {/* sort */}
                         <Col>
                             <Form.Select
                                 className="filter-control rounded"
@@ -129,7 +128,7 @@ const VideoPart = () => {
                 </Container>
             </section>
 
-            {/* VIDEO SECTION */}
+            {/* VIDEO  */}
             <section className="py-4">
                 <Container>
 
