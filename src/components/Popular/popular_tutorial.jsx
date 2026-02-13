@@ -17,14 +17,14 @@ const PopularTutorials = () => {
     // Fetch API
     useEffect(() => {
         async function loadTutorials() {
-        try {
-            const response = await axios.get(
-                "https://smileschool-api.hbtn.info/popular-tutorials"
-            );
-            setTutorials(response.data);
-        } catch (error) {
+            try {
+                const response = await axios.get(
+                    "https://smileschool-api.hbtn.info/popular-tutorials"
+                );
+                setTutorials(response.data);
+            } catch (error) {
                 console.error("Failed to load tutorials:", error);
-                setError("Unable to load tutorials at the moment"); // optional user-friendly error
+                setError("Unable to load tutorials at the moment");
             }
         }
 

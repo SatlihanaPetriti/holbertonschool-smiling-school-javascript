@@ -6,16 +6,16 @@ const VideoFilter = () => {
     return (
         <section className="py-4 sort-by">
             <Container>
-                <Row className="g-5 justify-content-center align-items-center">
+                <Row className="g-5 ">
                     <Col>
                         <InputGroup>
-                            <InputGroup.Text className=" filter-control bg-white border-end-0 filter-control">
+                            <InputGroup.Text className=" filter-control">
                                 <Search size={25} />
                             </InputGroup.Text>
                             <Form.Control
                                 type="text"
                                 placeholder="Search by keywords"
-                                className="border-start-0 filter-control"
+                                className=" filter-control"
                                 size="lg"
                             />
                         </InputGroup>

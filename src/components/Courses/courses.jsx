@@ -4,7 +4,6 @@ import "../../index.css";
 
 const CoursesP = () => {
     return (
-        <>
         <Container className="text-center py-5 ">
                 <h1 className="quote-course">
                     « Don't cry because it's over .<br />
@@ -12,7 +11,6 @@ const CoursesP = () => {
                 </h1>
                 <h6 className=" quote-author ">Dr. Seuss</h6>
             </Container>
-        </>
     );
 };
 

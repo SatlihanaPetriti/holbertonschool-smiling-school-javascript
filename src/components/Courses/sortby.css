@@ -12,12 +12,8 @@
     color: white;
 }
 
-.filter-control .bi {
-    color: white;
-}
-
 .filter-control:focus {
     outline: none;
     box-shadow: none;
-    background-color: rgb(220, 145, 255);
+  
 }
