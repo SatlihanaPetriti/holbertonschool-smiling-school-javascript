@@ -35,8 +35,8 @@ const FaqSection = () => {
                             </p>
                         </div>
                     </Col>
-                    <Col md={6} className="mb-4"  >
-                        <div className="faq-item ">
+                    <Col md={6}>
+                        <div className="faq-item mb-5">
                             <h2>How does this work?</h2>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -49,7 +49,7 @@ const FaqSection = () => {
                                 deserunt mollit anim id est laborum.
                             </p>
                         </div>
-                        <div className="faq-item ">
+                        <div className="faq-item mb-5">
                             <h2>How does this work?</h2>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
