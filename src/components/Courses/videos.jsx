@@ -13,6 +13,7 @@ const VideoPart = () => {
     const [error, setError] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
     const [topic, setTopic] = useState("All");
+    const [sort, setSort] = useState("most_popular");
 
     useEffect(() => {
         async function loadTutorials() {
@@ -39,17 +40,29 @@ const VideoPart = () => {
         setTopic(value);
     };
 
-    
+    const handleSort = (event) => {
+        const value = event.target.value;
+        setSort(value);
+    };
+
+
     const filteredTutorials = tutorials.filter((tutorial) => {
-        const byKeyword = tutorial.title
-            .toLowerCase()
-            .includes(searchTerm);
-
-        const byTopic =
-            topic === "All" ||
-            tutorial.topic?.toLowerCase() === topic.toLowerCase();
-
+        const byKeyword = tutorial.title.toLowerCase().includes(searchTerm);
+        const byTopic = topic === "All" || tutorial.topic?.toLowerCase() === topic.toLowerCase();
         return byKeyword && byTopic;
+    });
+
+    const sortedTutorials = [...filteredTutorials].sort((a, b) => {
+        if (sort === "most_popular") {
+            return b.star - a.star;
+        }
+        else if (sort === "most_recent") {
+            return b.published_at - a.published_at;
+        }
+        else if (sort === "most_viewed") {
+            return b.views - a.views;
+        }
+        return 0;
     });
 
     const renderStars = (count) => {
@@ -57,13 +70,14 @@ const VideoPart = () => {
         for (let i = 0; i < 5; i++) {
             let starImage;
             if (i < count) {
-                starImage = starColor;  
+                starImage = starColor;
             } else {
-                starImage = starGray; 
+                starImage = starGray;
             }
 
             stars.push(
                 <Image
+                    key={i}
                     src={starImage}
                     width={20}
                     height={20}
@@ -82,7 +96,7 @@ const VideoPart = () => {
                     <Row className="g-5">
 
                         {/* keyword */}
-                        <Col>
+                        <Col md={4}>
                             <InputGroup>
                                 <InputGroup.Text className="filter-control">
                                     <Search size={25} />
@@ -98,7 +112,7 @@ const VideoPart = () => {
                         </Col>
 
                         {/* topic*/}
-                        <Col>
+                        <Col md={4}>
                             <Form.Select
                                 className="filter-control rounded"
                                 size="lg"
@@ -113,14 +127,16 @@ const VideoPart = () => {
                         </Col>
 
                         {/* sort */}
-                        <Col>
+                        <Col md={4}>
                             <Form.Select
                                 className="filter-control rounded"
                                 size="lg"
+                                value={sort}
+                                onChange={handleSort}
                             >
-                                <option>Most Popular</option>
-                                <option>Most Recent</option>
-                                <option>Most Viewed</option>
+                                <option value="most_popular">Most Popular</option>
+                                <option value="most_recent">Most Recent</option>
+                                <option value="most_viewed">Most Viewed</option>
                             </Form.Select>
                         </Col>
 
@@ -133,64 +149,59 @@ const VideoPart = () => {
                 <Container>
 
                     <h5 className="mb-4 text-muted">
-                        {filteredTutorials.length} videos
+                        {sortedTutorials.length} videos
                     </h5>
 
-                    {error ? (
-                        <p className="text-danger">{error}</p>
-                    ) : (
-                        <Row className="g-4">
-                            {filteredTutorials.map((tutorial) => (
-                                <Col key={tutorial.id} md={3}>
-                                    <Card className="shadow-sm">
-                                        <div className="position-relative">
+                    <Row className="g-4">
+                        {sortedTutorials.map((tutorial) => (
+                            <Col key={tutorial.id} md={3}>
+                                <Card className="shadow-sm">
+                                    <div className="position-relative">
+                                        <Image
+                                            src={play}
+                                            width={50}
+                                            height={50}
+                                            className="position-absolute top-50 start-50 translate-middle"
+                                        />
+                                        <Image
+                                            src={tutorial.thumb_url}
+                                            alt={tutorial.title}
+                                            className="w-100"
+                                        />
+                                    </div>
+
+                                    <Card.Body>
+                                        <Card.Title>
+                                            {tutorial.title}
+                                        </Card.Title>
+
+                                        <Card.Text className="text-muted">
+                                            {tutorial["sub-title"]}
+                                        </Card.Text>
+
+                                        <div className="d-flex align-items-center gap-2 mb-3">
                                             <Image
-                                                src={play}
-                                                width={50}
-                                                height={50}
-                                                className="position-absolute top-50 start-50 translate-middle"
+                                                src={tutorial.author_pic_url}
+                                                roundedCircle
+                                                width={30}
+                                                height={30}
                                             />
-                                            <Image
-                                                src={tutorial.thumb_url}
-                                                alt={tutorial.title}
-                                                className="w-100"
-                                            />
+                                            <span className="fw-bold text-purple">
+                                                {tutorial.author}
+                                            </span>
                                         </div>
 
-                                        <Card.Body>
-                                            <Card.Title>
-                                                {tutorial.title}
-                                            </Card.Title>
-
-                                            <Card.Text className="text-muted">
-                                                {tutorial["sub-title"]}
-                                            </Card.Text>
-
-                                            <div className="d-flex align-items-center gap-2 mb-3">
-                                                <Image
-                                                    src={tutorial.author_pic_url}
-                                                    roundedCircle
-                                                    width={30}
-                                                    height={30}
-                                                />
-                                                <span className="fw-bold text-purple">
-                                                    {tutorial.author}
-                                                </span>
-                                            </div>
-
-                                            <div className="d-flex justify-content-between">
-                                                <div>{renderStars(tutorial.star)}</div>
-                                                <span className="fw-bold text-purple">
-                                                    {tutorial.duration}
-                                                </span>
-                                            </div>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            ))}
-                        </Row>
-                    )}
-
+                                        <div className="d-flex justify-content-between">
+                                            <div>{renderStars(tutorial.star)}</div>
+                                            <span className="fw-bold text-purple">
+                                                {tutorial.duration}
+                                            </span>
+                                        </div>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        ))}
+                    </Row>
                 </Container>
             </section>
         </>
