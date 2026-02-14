@@ -7,14 +7,12 @@ import { Link } from 'react-router-dom';
 
 const MainNavbar = () => {
     return (
-        <Navbar expand="lg" variant="dark" className="py-3 bg-transparent">
+        <Navbar expand="md" variant="dark" className="py-3 bg-transparent">
             <Container>
-                <Navbar.Brand as={Link} to="/">
-                    <img src={logo} alt="Logo" height={30} className="me-2" />
-                    <img src={logo1} alt="Logo" height={30} />
+                <Navbar.Brand as={Link} to="/" className="logo-wrapper">
+                    <img src={logo} alt="Logo" height={30} className=" me-2 logo-main" />
+                    <img src={logo1} alt="Logo" height={30} className="logo-sub" />
                 </Navbar.Brand>
-
-                <Navbar.Toggle aria-controls="navbar-nav" />
 
                 <Navbar.Collapse id="navbar-nav" className="justify-content-end">
                     <Nav className="fw-bold txt-size ">

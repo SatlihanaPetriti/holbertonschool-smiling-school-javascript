@@ -10,7 +10,7 @@ const Header = () => {
         <>
             <Container className="text-center py-5 ">
                 <h1 className="get-schooled">Get schooled</h1>
-                <ul className="list-inline">
+                <ul className="list-inline categories">
                     <li className="list-inline-item mx-5">SMILE</li>
                     <li className="list-inline-item mx-5">GRIN</li>
                     <li className="list-inline-item mx-5">LAUGH</li>
@@ -22,15 +22,15 @@ const Header = () => {
                 </div>
             </Container>
 
-            <Container className="text-center py-5">
-                <h4>
+            <Container className="text-center py-5 learn-text-container">
+                <h4 className="learn-pros-text">
                     <span className="txt-learn fw-bold">Learn</span> from the pros
                 </h4>
             </Container>
 
-            <Container className="py-5">
+            <Container className="py-5 card-container">
                 <Row className="g-4 justify-content-center">
-                    <Col md={3}>
+                    <Col xs={6} md={3}>
                         <Card  text="white" className="text-center border-0 bg-transparent">
                             <Card.Img variant="top" src={phillip} className="student-img" />
                             <Card.Body >
@@ -40,7 +40,7 @@ const Header = () => {
                         </Card>
                     </Col>
 
-                    <Col md={3}>
+                    <Col xs={6} md={3}>
                         <Card bg="dark" text="white" className="text-center border-0 bg-transparent">
                             <Card.Img variant="top" src={nannie} className="student-img" />
                             <Card.Body>
@@ -50,7 +50,7 @@ const Header = () => {
                         </Card>
                     </Col>
 
-                    <Col md={3}>
+                    <Col xs={6} md={3}>
                         <Card bg="dark" text="white" className="text-center border-0 bg-transparent">
                             <Card.Img variant="top" src={bruce} className="student-img" />
                             <Card.Body >
@@ -60,7 +60,7 @@ const Header = () => {
                         </Card>
                     </Col>
 
-                    <Col md={3}>
+                    <Col xs={6} md={3}>
                         <Card bg="dark" text="white" className="text-center border-0 bg-transparent">
                             <Card.Img variant="top" src={henry} className="student-img " />
                             <Card.Body >

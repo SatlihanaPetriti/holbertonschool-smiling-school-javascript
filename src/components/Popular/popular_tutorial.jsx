@@ -12,7 +12,28 @@ const PopularTutorials = () => {
     const [tutorials, setTutorials] = useState([]);
     const [startIndex, setStartIndex] = useState(0);
     const [error, setError] = useState("");
-    const cardsToShow = 4;
+    const [cardsToShow, setCardsToShow] = useState(4);
+    useEffect(() => {
+        const updateCardsToShow = () => {
+            const width = window.innerWidth;
+            if (width <= 575) {
+                setCardsToShow(1); 
+            } else if (width <=768) {
+                setCardsToShow(2); 
+            } else {
+                setCardsToShow(4); 
+            }
+        };
+
+        updateCardsToShow(); 
+        window.addEventListener('resize', updateCardsToShow);
+
+        return () => window.removeEventListener('resize', updateCardsToShow);
+    }, []);
+    
+    useEffect(() => {
+        setStartIndex(0);
+    }, [cardsToShow]);
 
     // Fetch API
     useEffect(() => {
@@ -90,9 +111,9 @@ const PopularTutorials = () => {
                     )}
 
                     {/* Tutorial cards */}
-                    <Row className="g-4 ">
+                    <Row className="g-4 tutorials-row w-100">
                         {visibleTutorials.map((tutorial) => (
-                            <Col >
+                            <Col xs={12} sm={12} md={6} lg={6} xl={3}  >
                                 <Card className=" shadow-sm">
                                     <div className="position-relative rounded-top">
                                         <Image

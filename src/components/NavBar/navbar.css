@@ -9,3 +9,21 @@
     font-size: 12px;
     letter-spacing: 1.5px;
 }
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 757px) {
+    .navbar .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+    .logo-main {
+        margin-bottom: 10px;
+    }
+}
+
+

@@ -6,3 +6,22 @@
     width: 150px;
     height: 150px;
 }
+
+@media screen and (max-width: 575px) {
+
+    .testimonial-image {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-arrow-left {
+        top: 25% !important;
+        left: 50px !important;
+    }
+
+    .testimonial-arrow-right {
+        top: 25% !important;
+        right: 50px !important;
+    }
+}

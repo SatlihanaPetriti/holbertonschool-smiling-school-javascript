@@ -25,8 +25,7 @@
     color: #ffffff !important;
     font-weight: bold !important;
     border-radius: 50px !important;
-    box-shadow:10px 10px 10px rgba(0, 0, 0, 0.45) !important;
-    
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.45) !important;
 
 }
 
@@ -48,4 +47,52 @@
     width: 120px !important;
     height: 120px !important;
     border-radius: 50% !important;
+}
+
+@media screen and (max-width: 575px) {
+    .bg-image::before {
+        background-size: auto;
+        background-position: top center;
+    }
+
+    .get-schooled {
+        font-size: 65px;
+    }
+
+    .learn-pros-text {
+        font-size: 30px;
+    }
+
+    .categories li {
+        font-size: 15px;
+        margin: 0 20px !important;
+        font-weight: 500;
+    }
+
+    .container.learn-text-container {
+        padding-bottom: 50px !important;
+    }
+
+    .container.card-container {
+        padding-top: 0% !important;
+        padding-bottom: 50px !important;
+    }
+
+    .card-container .card-body {
+        padding: 0.2rem !important;
+    }
+
+    .card-container .card-title {
+        font-size: 1rem !important;
+    }
+
+    .card-container .card-text {
+        font-size: 10px !important;
+    }
+
+    .card-container .student-img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
 }

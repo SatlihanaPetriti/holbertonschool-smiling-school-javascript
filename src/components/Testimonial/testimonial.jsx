@@ -62,14 +62,14 @@ const Testimonial = () => {
                     <Button
                         variant="link"
                         onClick={previous}
-                        className="position-absolute top-50  translate-middle-y"
+                        className="position-absolute top-50 start-0 translate-middle-y testimonial-arrow-left"
                     >
                         <Image src={arrowLeft} width={30} alt="Previous" />
                     </Button>
                 )}
 
                 <Row className="align-items-center justify-content-center">
-                    <Col md="auto">
+                    <Col md="auto" className="testimonial-image">
                         <Image
                             src={currentSlide.pic_url}
                             roundedCircle
@@ -77,7 +77,7 @@ const Testimonial = () => {
                             alt={currentSlide.name}
                         />
                     </Col>
-                    <Col md={7}>
+                    <Col md={7} >
                         <p className="fs-5 fw-light">"{currentSlide.text}"</p>
                         <p className="fw-bold mb-1">{currentSlide.name}</p>
                         <p className="fst-italic">{currentSlide.title}</p>
@@ -88,7 +88,7 @@ const Testimonial = () => {
                     <Button
                         variant="link"
                         onClick={next}
-                        className="position-absolute top-50 end-0 translate-middle-y"
+                        className="position-absolute top-50 end-0 translate-middle-y testimonial-arrow-right"
                     >
                         <Image src={arrowRight} width={30} alt="Next" />
                     </Button>

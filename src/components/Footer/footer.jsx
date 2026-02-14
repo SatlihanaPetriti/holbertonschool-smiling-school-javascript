@@ -10,12 +10,12 @@ const Footer = () => {
             <Container>
                 <Row className="align-items-center py-5">
                     {/* Logo */}
-                    <Col md={6}>
+                    <Col xs={12} sm={12} md={6} className="text-center text-md-start mb-4 mb-md-0">
                         <img
                             src={logo}
                             alt="Smile Logo"
                             height={30}
-                            className="me-3"
+                            className="me-4"
                         />
                         <img
                             src={smile}
@@ -26,7 +26,7 @@ const Footer = () => {
                     </Col>
 
                     {/* Social icons */}
-                    <Col md={6} className="text-md-end">
+                    <Col xs={12} md={6} className="text-center text-md-end">
                         <a href="https://www.facebook.com/" className="footer-icon">
                             <Facebook size={20} />
                         </a>
@@ -39,7 +39,7 @@ const Footer = () => {
                     </Col>
                 </Row>
 
-                <Row className="mt-4">
+                <Row className="mt-2">
                     <Col className=" text-center text-footer ">
                         <small>@smileschool 2020</small>
                     </Col>

@@ -5,12 +5,13 @@ import './membership.css';
 const Membership = () => {
     return (
         <Container fluid className="membership text-center py-5 px-5">
+            
             <h1 className=" text-color mb-5">
                 <span >Free</span> membership
             </h1>
 
-            <Row className=" justify-content-center g-4 ms-5">
-                <Col md={3}>
+            <Row >
+                <Col xs={12} sm={12} md={6} lg={3}>
                     <div className=" p-3">
                         <Image 
                         src={smile} 
@@ -23,7 +24,7 @@ const Membership = () => {
                     </div>
                 </Col>
 
-                <Col md={3}>
+                <Col xs={12} sm={12} md={6} lg={3}>
                     <div className=" p-3">
                         <Image
                             src={smile}
@@ -36,7 +37,7 @@ const Membership = () => {
                     </div>
                 </Col>
 
-                <Col md={3}>
+                <Col xs={12} sm={12} md={6} lg={3}>
                     <div className=" p-3">
                         <Image
                             src={smile}
@@ -49,7 +50,7 @@ const Membership = () => {
                     </div>
                 </Col>
 
-                <Col md={3}>
+                <Col xs={12} sm={12} md={6} lg={3}>
                     <div className=" p-3">
                         <Image
                             src={smile}

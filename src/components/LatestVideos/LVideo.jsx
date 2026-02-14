@@ -43,7 +43,7 @@ const LatestVideos = () => {
                     {/* Cards */}
                     <Row className="g-4" >
                         {PopularVideos.map((PopularVideo) => (
-                            <Col md={3} >
+                            <Col xs={12} sm={12} md={6} lg={6} xl={3} >
                                 <Card className="bg-white shadow-sm">
                                     <div className="position-relative overflow-hidden rounded-top">
                                         <Image
